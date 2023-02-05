@@ -6,9 +6,9 @@
 n_ticket = input("Enter the number of ticket: ")
 sum_num1 = sum_num2 = 0
 
-if 1 < len(n_ticket) < 7:
-    num2 = n_ticket % 1000
-    num1 = n_ticket // 1000
+if len(n_ticket) == 6:
+    num2 = int(n_ticket) % 1000
+    num1 = int(n_ticket) // 1000
 
     sum_num1 += num1 % 10
     num1 //= 10
