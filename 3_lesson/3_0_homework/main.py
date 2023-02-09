@@ -30,4 +30,4 @@ if __name__ == "__main__":
     print(list_arr)
     find_num_count = int(input("Please, digit X for for find in array: "))
 
-    print(f"In array = {list_arr} number {find_num_count} meets {find_count_num_in_array(list_arr, find_num_count)}")
+    print(f"In array = {list_arr} number {find_num_count} meets {find_count_num_in_array(list_arr, find_num_count)} times")

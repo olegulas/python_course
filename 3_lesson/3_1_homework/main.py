@@ -18,9 +18,12 @@ def create_array(sz: int, st: int, lt: int):
     return array
 
 
-def find_count_num_in_array(find, find_num):
-    count = sum([1 for i in find if i == find_num])
-    return count
+def find_count_num_in_array(find: list, find_num):
+    close_num = find[0]
+    for i in find:
+        if abs(find_num - i) < abs(find_num - close_num):
+            close_num = i
+    return close_num
 
 
 if __name__ == "__main__":
@@ -30,5 +33,4 @@ if __name__ == "__main__":
     list_arr = create_array(size, start, last)
     print(list_arr)
     find_num_count = int(input("Please, digit X for for find in array: "))
-
-    print(f"In array = {list_arr} number {find_num_count} meets {find_count_num_in_array(list_arr, find_num_count)}")l
+    print(find_count_num_in_array(list_arr, find_num_count))
