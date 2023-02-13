@@ -10,3 +10,17 @@
 #
 # 4 -> 1 2 3 4
 # 9
+import random
+
+
+def create_array(sz: int, st: int, lt: int):
+    array = list()
+    for _ in range(sz):
+        array.append(random.randint(st, lt))
+    return array
+
+
+n = int(input("please enter the number of bushes: "))
+start = input("Please, enter start digit in array bushes for random generator: ").split()
+last = input("Please, enter last digit in array bushes for random generator: ").split()
+list_arr = create_array(int(n), int(start), int(last))

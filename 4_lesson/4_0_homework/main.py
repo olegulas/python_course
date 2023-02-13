@@ -19,14 +19,11 @@ def create_array(sz: int, st: int, lt: int):
 
 
 if __name__ == "__main__":
-    size1 = int(input("Please, enter size 1 array: "))
-    start1 = int(input("Please, enter start digit in 1 array for random generator: "))
-    last1 = int(input("Please, enter last digit for random generator: "))
-    list_arr1 = create_array(size1, start1, last1)
-    size2 = int(input("Please, enter size 2 array: "))
-    start2 = int(input("Please, enter start digit in 2 array for random generator: "))
-    last2 = int(input("Please, enter last digit for random generator: "))
-    list_arr2 = create_array(size2, start2, last2)
+    size1, size2 = input("Please, enter size 1 and 2 array: ").split()
+    start1, start2 = input("Please, enter start digit in 1 array and 2 array for random generator: ").split()
+    last1, last2 = input("Please, enter last digit in 1 array and 2 array for random generator: ").split()
+    list_arr1 = create_array(int(size1), int(start1), int(last1))
+    list_arr2 = create_array(int(size2), int(start2), int(last2))
     print(*list_arr1)
     print(*list_arr2)
     print(*sorted(set(list_arr1).intersection(set(list_arr2))))
