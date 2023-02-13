@@ -20,7 +20,19 @@ def create_array(sz: int, st: int, lt: int):
     return array
 
 
-n = int(input("please enter the number of bushes: "))
-start = input("Please, enter start digit in array bushes for random generator: ").split()
-last = input("Please, enter last digit in array bushes for random generator: ").split()
-list_arr = create_array(int(n), int(start), int(last))
+def max_buches(arr):
+    max_bushes = 0
+    for item in range(n):
+        sum_buches = arr[item - 1] + arr[item] + arr[item + 1 if item < n - 1 else 0]
+        if max_bushes < sum_buches:
+            max_bushes = sum_buches
+    return max_bushes
+
+
+if __name__ == "__main__":
+    n = int(input("please enter the number of bushes: "))
+    start = int(input("Please, enter start digit in array bushes for random generator: "))
+    last = int(input("Please, enter last digit in array bushes for random generator: "))
+    list_arr = create_array(n, start, last)
+    print(*list_arr)
+    print(max_buches(list_arr))
