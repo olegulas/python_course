@@ -3,6 +3,8 @@
 def pow_ab(val1, val2):
     if val2 == 0:
         return 1
+    if val2 < 0:
+        return pow_ab(val1, val2 + 1) * 1 / val1
     return pow_ab(val1, val2 - 1) * val1
 
 
